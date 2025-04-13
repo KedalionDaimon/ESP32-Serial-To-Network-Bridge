@@ -6,7 +6,7 @@ If you are having a dumb terminal, and in particular a hardcopy terminal, and yo
 
 In its simplest use, the RS232-to-Wifi bridge may be utilized to facilitate printing: the "mainframe" simply pipes out the entire document in text-only-form to the terminal, which then prints it.
 
-In case of an output-only-terminal, if you still wish to achieve "an effect LIKE on a printing terminal", you evidently will have to still do all the actual typing on the "mainframe", but the output can be channeled, e.g. from Termux or Linux on Android, or iSH on iOS, to the "terminal", with this pipe, which will show both the command typed as well as its reply, for an sh shell:
+By nature, the bridge is bidirectional and would translate "network to RS232" and "RS232 to network", but in case of an output-only-terminal, if you still wish to achieve "an effect LIKE on a printing terminal", you evidently will have to still do all the actual typing on the "mainframe", but the output can be channeled, e.g. from Termux or Linux on Android, or iSH on iOS, to the "terminal", with this pipe, which will show both the command typed as well as its reply, for an sh shell:
 
 stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sh | stdbuf -e0 -o0 tee /dev/stderr) | stdbuf -e0 -o0 nc 192.168.4.1 8088
 
@@ -20,4 +20,5 @@ stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform | stdbuf -e0 -o0 tee /dev/st
 
 When reset, the ESP32 outputs its network name, password as well as IP address and port - in case you forget... :)
 
+Two variants are shown - one that also adds automatically a margin, and one without.
 
