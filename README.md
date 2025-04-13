@@ -1,5 +1,6 @@
 # ESP32-Serial-To-Network-Bridge
 An Arduino sketch for translating a network connection to an RS232 connection at 300 baud, for a slow typewriter (Brother EP-22)
+
 by Nino Ivanov, April 2025
 
 If you are having a dumb terminal, and in particular a hardcopy terminal, and you wish to control a device with it that does not permit directly a serial connection (e.g. some iOS device like an iPhone, or many Android devices, your "mainframe" of sorts), then using an ESP32 microcontroller board, you may upload the attached sketch, and you will gain the ESP32 as a "Wifi server" to which the "mainframe" can connect over Netcat at port 8088. Then, whatever the typewriter/hardcopy terminal/printing terminal is typing, arrives at the "mainframe", and whatever the "mainframe" sends is printed out.
