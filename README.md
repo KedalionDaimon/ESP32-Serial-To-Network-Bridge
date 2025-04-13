@@ -14,7 +14,7 @@ stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sh | stdbuf -e0 -o0 tee /dev/stderr) | stdbu
 
 stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 bwbasic) | stdbuf -e0 -o0 nc 192.168.4.1 8088
 
-Delays are hardcoded in the sketch, to allow the typewriter to "catch up" / "keep up" with the "mainframe" output. Instead, if you prefer your own delays, you may add them over "pv" in the above pipe (adivisable to do so twice for greater accuracy), and set "delay(0);" instead of "delay(160);" / "delay(800);" in the Arduino sketch, e.g. running SBCL Lisp:
+Delays are hardcoded in the sketch, to allow the typewriter to "catch up" / "keep up" with the "mainframe" output. Instead, if you prefer your own delays, you may add them over "pv" in the above pipe (adivisable to do so twice for greater accuracy), and set "delay(0);" instead of "delay(125);" / "delay(750);" in the Arduino sketch, e.g. running SBCL Lisp:
 
 stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform | stdbuf -e0 -o0 tee /dev/stderr) | pv -L 6 2>/dev/null | pv -L 6 2>/dev/null | stdbuf -e0 -o0 nc 192.168.4.1 8088
 
