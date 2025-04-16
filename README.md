@@ -30,3 +30,6 @@ When reset, the ESP32 outputs its network name, password as well as IP address a
 
 Two variants are shown - one that also adds automatically a margin, and one without.
 
+For a demonstration, see:
+
+https://www.youtube.com/watch?v=M2M4mQGjXtM
