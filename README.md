@@ -20,11 +20,11 @@ Delays are hardcoded in the sketch, to allow the typewriter to "catch up" / "kee
 no margin:
 
 
-stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform 2>&1 | stdbuf -e0 -o0 tee /dev/stderr) | pv -L 5 2>/dev/null | pv -L 5 2>/dev/null | stdbuf -e0 -o0 nc 192.168.4.1 8088
+stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform 2>&1 | stdbuf -e0 -o0 tee /dev/stderr) | pv -L 6 2>/dev/null | pv -L 5 2>/dev/null | stdbuf -e0 -o0 nc 192.168.4.1 8088
 
 with margin:
 
-stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform 2>&1 | stdbuf -e0 -o0 tee /dev/stderr) | pv -L 5 2>/dev/null | pr -t -o 5 -w 75 | pv -L 5 2>/dev/null | stdbuf -e0 -o0 nc 192.168.4.1 8088
+stdbuf -e0 -o0 tee >(stdbuf -e0 -o0 sbcl --noinform 2>&1 | stdbuf -e0 -o0 tee /dev/stderr) | pv -L 6 2>/dev/null | pr -t -o 5 -w 75 | pv -L 5 2>/dev/null | stdbuf -e0 -o0 nc 192.168.4.1 8088
 
 When reset, the ESP32 outputs its network name, password as well as IP address and port - in case you forget... :)
 
