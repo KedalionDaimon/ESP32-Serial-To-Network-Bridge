@@ -1,3 +1,12 @@
+// LOLIN(WEMOS) D1 R32 & mini (ESP8266)
+// ESP32 Wrover - possible examples
+// telnet 192.168.4.1 23
+// or
+// nc -C 192.168.4.1 23
+#pragma GCC optimize ("-O3")
+#pragma GCC push_options
+#define SERIAL_BUFFER_SIZE 2048
+
 #define SRL Serial
 #include <WiFi.h>
 const char* ssid = "BrotherEP22";
@@ -7,6 +16,7 @@ WiFiClient client = wifiServer.available();
 unsigned char ch;
 void setup() {
   SRL.begin(300, SERIAL_8N1);
+  Serial.setRxBufferSize(SERIAL_BUFFER_SIZE);
   WiFi.softAP(ssid, password); delay(500);
   SRL.print("    WiFi");
   wifiServer.begin();
